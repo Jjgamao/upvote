@@ -1,13 +1,15 @@
 <?php
-	session_start();
 	include 'includes/conn.php';
+	session_start();
 
-	if(!isset($_SESSION['admin']) || trim($_SESSION['admin']) == ''){
+	if(isset($_SESSION['voter'])){
+		$sql = "SELECT * FROM voters WHERE id = '".$_SESSION['voter']."'";
+		$query = $conn->query($sql);
+		$voter = $query->fetch_assoc();
+	}
+	else{
 		header('location: index.php');
+		exit();
 	}
 
-	$sql = "SELECT * FROM admin WHERE id = '".$_SESSION['admin']."'";
-	$query = $conn->query($sql);
-	$user = $query->fetch_assoc();
-	
 ?>
