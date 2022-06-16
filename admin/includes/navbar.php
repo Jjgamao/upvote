@@ -1,45 +1,52 @@
 <header class="main-header">
-  <nav class="navbar navbar-static-top"  style="background-color: #8D1436;">
-    <div class="container">
-      <div class="navbar-header">  
-        <a href="#" class="navbar-brand" style= "font-size:large;">   
-        <!-- <span class="logo-mini">  
-        <img src = "https://www.upcebu.edu.ph/wp-content/uploads/2018/09/upcebulogo.png" style= "height: 30px; text-align: center; align-items: center;" alt=""/>
-</span> -->
-        <b>UP</b>Vote </span>
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-          <i class="fa fa-bars"></i>
-        </button>
-      </div>
+  <!-- Logo -->
+  <a href="#" class="logo" style = "background-color: #014421;">
+    <!-- mini logo for sidebar mini 50x50 pixels -->
+    <span class="logo-mini">    
+            <img src='../images/logo.png' style= "height: 40px; text-align:center;"/>
+    <b>UP</b>V</span>
+    <!-- logo for regular state and mobile devices -->
+    <span class="logo-lg" >
+            <img src='../images/logo.png' style= "height: 40px; text-align:center;"/>
+    <b>UP</b>VOTE</span>
+  </a>
+  <!-- Header Navbar: style can be found in header.less -->
+  <nav class="navbar navbar-static-top" style="background-color: #8D1436;">
+    <!-- Sidebar toggle button-->
+    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+      <span class="sr-only">Toggle navigation</span>
+    </a>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
-        <ul class="nav navbar-nav">
-          <?php
-            if(isset($_SESSION['student'])){
-              echo "
-                <li><a href='index.php'>HOME</a></li>
-                <li><a href='transaction.php'>TRANSACTION</a></li>
-              ";
-            } 
-          ?>
-        </ul>
-      </div>
-      <!-- /.navbar-collapse -->
-      <!-- Navbar Right Menu -->
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <li class="user user-menu">
-            <a href="">
-              <img src="<?php echo (!empty($voter['photo'])) ? 'images/'.$voter['photo'] : 'images/profile.jpg' ?>" class="user-image" alt="User Image">
-              <span class="hidden-xs"><?php echo $voter['firstname'].' '.$voter['lastname']; ?></span>
-            </a>
-          </li>
-          <li><a href="logout.php"><i class="fa fa-sign-out"></i> LOGOUT</a></li>  
-        </ul>
-      </div>
-      <!-- /.navbar-custom-menu -->
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+        <!-- User Account: style can be found in dropdown.less -->
+        <li class="dropdown user user-menu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <img src="<?php echo (!empty($user['photo'])) ? '../images/'.$user['photo'] : '../images/profile.jpg'; ?>" class="user-image" alt="User Image">
+            <span class="hidden-xs"><?php echo $user['firstname'].' '.$user['lastname']; ?></span>
+          </a>
+          <ul class="dropdown-menu">
+            <!-- User image -->
+            <li class="user-header" style="background-color: #014421;">
+              <img src="<?php echo (!empty($user['photo'])) ? '../images/'.$user['photo'] : '../images/profile.jpg'; ?>" class="img-circle" alt="User Image">
+
+              <p>
+                <?php echo $user['firstname'].' '.$user['lastname']; ?>
+                <small>Member since <?php echo date('M. Y', strtotime($user['created_on'])); ?></small>
+              </p>
+            </li>
+            <li class="user-footer">
+              <div class="pull-left" >
+                <a href="#profile" data-toggle="modal" class="btn btn-default btn-flat" style="background-color: #8D1436; color: white;" id="admin_profile">Update</a>
+              </div>
+              <div class="pull-right">
+                <a href="logout.php" class="btn btn-default btn-flat" style="background-color: #8D1436; color: white;"> Sign out</a>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
-    <!-- /.container-fluid -->
   </nav>
 </header>
+<?php include 'includes/profile_modal.php'; ?>

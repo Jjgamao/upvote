@@ -19,7 +19,7 @@ style="background-image: url('http://www.upcebuapo.org/images/slide3.jpg'); back
   
   	<div class="login-box-body"  style="background-color: rgba(255, 255, 255, 0.5);">
 	  <div class="login-logo">
-	  <b style="color: #8D1436;">U</b><b style="color: #014421;">P</b><b style="color: black;">Vote</b>
+	  <b style="color: #8D1436;">U</b><b style="color: #014421;">P</b><b style="color: black;">VOTE</b>
   	</div>
     	<p class="login-box-msg" style="color: black;">Sign in to start voting.</p>
 

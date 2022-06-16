@@ -1,8 +1,8 @@
 <header class="main-header">
-  <nav class="navbar navbar-static-top">
+  <nav class="navbar navbar-static-top" style = "background-color:#8D1436;">
     <div class="container">
       <div class="navbar-header">
-        <a href="#" class="navbar-brand"><b>Voting</b>System</a>
+        <a href="#" class="navbar-brand"><b>U</b><b>P</b>VOTE</a>
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
           <i class="fa fa-bars"></i>
         </button>
@@ -31,7 +31,7 @@
               <span class="hidden-xs"><?php echo $voter['firstname'].' '.$voter['lastname']; ?></span>
             </a>
           </li>
-          <li><a href="logout.php"><i class="fa fa-sign-out"></i> LOGOUT</a></li>  
+          <li><a href="logout.php"><i class="fa fa-sign-out"></i> Log out</a></li>  
         </ul>
       </div>
       <!-- /.navbar-custom-menu -->
